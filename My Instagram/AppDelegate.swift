@@ -7,15 +7,45 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var ai = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+    var container : UIView!
+    
+    class func intance() -> AppDelegate{
+        return UIApplication.shared.delegate as!  AppDelegate
+    }
 
-
+    
+    func showIndicator() {
+        if let window = window {
+            container = UIView()
+            container.frame = window.frame
+            container.center = window.center
+            container.backgroundColor = UIColor(white: 0, alpha: 0.8)
+            
+            ai.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+            ai.hidesWhenStopped = true
+            ai.center = CGPoint(x: container.frame.size.width / 2, y: container.frame.size.height / 2)
+            
+            container.addSubview(ai)
+            window.addSubview(container)
+            ai.startAnimating()
+        }
+    }
+    
+    func dismissActivityIndicator(){
+        if let _ = window{
+            container.removeFromSuperview()
+        }
+    }
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FIRApp.configure()
         return true
     }
 
