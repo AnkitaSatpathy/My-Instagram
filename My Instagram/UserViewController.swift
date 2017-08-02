@@ -10,18 +10,18 @@ import UIKit
 import Firebase
 
 class UserViewController: UIViewController , UITableViewDelegate , UITableViewDataSource {
-
+    
     @IBOutlet weak var tableview: UITableView!
     var user = [User]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        
         retriveUsers()
         
     }
-
+    
     func retriveUsers(){
         
         let ref = FIRDatabase.database().reference()
@@ -32,7 +32,7 @@ class UserViewController: UIViewController , UITableViewDelegate , UITableViewDa
                 if let uid = value["uid"] as? String{
                     if uid != FIRAuth.auth()!.currentUser!.uid{
                         let usersToShow = User()
-                       if  let fullname = value["full name"] as? String , let imagepath = value["urltoImage"] as? String
+                        if  let fullname = value["full name"] as? String , let imagepath = value["urltoImage"] as? String
                         {
                             usersToShow.fullname = fullname
                             usersToShow.imageurl = imagepath
@@ -68,7 +68,7 @@ class UserViewController: UIViewController , UITableViewDelegate , UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return user.count ?? 0
+        return user.count 
     }
     
     
@@ -148,6 +148,6 @@ extension UIImageView {
         
         task.resume()
     }
-
-   
+    
+    
 }

@@ -97,8 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				BC68FAB51E49F4470002D85E /* custom cell */,
-				BC68FAB41E49F43E0002D85E /* Objects */,
-				BC68FAB31E49F3EE0002D85E /* Views */,
+				BC68FAB41E49F43E0002D85E /* Model */,
+				BC68FAB31E49F3EE0002D85E /* Controller */,
 				BC4A40F51E49AB8600C9CD8E /* GoogleService-Info.plist */,
 				BC4A40E31E49AAE400C9CD8E /* AppDelegate.swift */,
 				BC4A40E71E49AAE400C9CD8E /* Main.storyboard */,
@@ -109,7 +109,7 @@
 			path = "My Instagram";
 			sourceTree = "<group>";
 		};
-		BC68FAB31E49F3EE0002D85E /* Views */ = {
+		BC68FAB31E49F3EE0002D85E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				BCD0515C1E4B012D00185071 /* UploadViewController.swift */,
@@ -118,16 +118,16 @@
 				BC68FAAD1E49E10B0002D85E /* LoginViewController.swift */,
 				BCD051641E4B705900185071 /* FeedsViewController.swift */,
 			);
-			name = Views;
+			name = Controller;
 			sourceTree = "<group>";
 		};
-		BC68FAB41E49F43E0002D85E /* Objects */ = {
+		BC68FAB41E49F43E0002D85E /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				BC68FAB61E49F4DD0002D85E /* User.swift */,
 				BCD051601E4B392100185071 /* Post.swift */,
 			);
-			name = Objects;
+			name = Model;
 			sourceTree = "<group>";
 		};
 		BC68FAB51E49F4470002D85E /* custom cell */ = {
@@ -169,12 +169,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Ankita Satpathy";
 				TargetAttributes = {
 					BC4A40DF1E49AAE400C9CD8E = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = E3M6HYAQS9;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -308,7 +309,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -316,7 +319,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -358,7 +365,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -366,7 +375,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -402,7 +415,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ankita.My-Instagram";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -416,7 +430,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ankita.My-Instagram";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

@@ -8,12 +8,12 @@
 
 import UIKit
 
-class userCell: UITableViewCell {
-
+class userCell: UITableViewCell   {
+    
     @IBOutlet weak var imageview: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     
     var userID: String!
     //testing git
-
+    
 }
