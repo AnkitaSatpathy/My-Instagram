@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class SignupViewController: UIViewController, UIImagePickerControllerDelegate , UINavigationControllerDelegate {
+class SignupViewController: UIViewController, UIImagePickerControllerDelegate , UINavigationControllerDelegate , UITextViewDelegate{
 
     @IBOutlet weak var nameLabel: UITextField!
     @IBOutlet weak var emailField: UITextField!
@@ -25,6 +25,10 @@ class SignupViewController: UIViewController, UIImagePickerControllerDelegate , 
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self
+        emailField.delegate = self
+        passwordField.delegate = self
+        confirmpwField.delegate = self
+        
         
         let storage = FIRStorage.storage().reference(forURL: "gs://my-instagram-423eb.appspot.com")
        userStorage = storage.child("users")
@@ -97,4 +101,15 @@ class SignupViewController: UIViewController, UIImagePickerControllerDelegate , 
     }
 
    
+}
+
+extension SignupViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
 }

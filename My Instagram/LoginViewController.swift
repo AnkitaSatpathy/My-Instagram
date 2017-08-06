@@ -16,11 +16,12 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        emailField.delegate = self
+        passwordField.delegate = self
     }
 
     @IBAction func loginPressed(_ sender: Any) {
+        AppDelegate.intance().showIndicator()
         guard emailField.text != "" , passwordField.text != "" else {
             return
         }
@@ -32,6 +33,7 @@ class LoginViewController: UIViewController {
             if user != nil{
                 let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userVC")
                 self.present(vc, animated: true, completion: nil)
+                AppDelegate.intance().dismissActivityIndicator()
             }
         })
         
@@ -39,5 +41,15 @@ class LoginViewController: UIViewController {
     }
     
 
+    
+}
 
+extension LoginViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
